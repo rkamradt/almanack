@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Poor Richard's Engineering Almanack</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="page">
+
+    <header class="masthead">
+      <div class="masthead-rule"></div>
+      <p class="year-line">MDCCCX</p>
+      <h1 class="title">Poor Richard's<br/>Engineering Almanack</h1>
+      <p class="subtitle">
+        Being a Collection of Proverbs, Observations &amp; Counsels<br/>
+        applied to the Modern Art of Building Software
+      </p>
+      <p class="byline">By <em>Richard Saunders, Philom.</em></p>
+      <div class="masthead-rule"></div>
+    </header>
+
+    <section class="saying-of-day" id="random-section">
+      <h2 class="section-head">✦ Saying of the Day ✦</h2>
+      <blockquote class="daily-saying" id="daily-saying">
+        <span class="loading-dots">· · ·</span>
+      </blockquote>
+    </section>
+
+    <div class="masthead-rule thin"></div>
+
+    <section class="ask-section">
+      <h2 class="section-head">✦ Seek Poor Richard's Counsel ✦</h2>
+      <p class="instruction">
+        Pose thy question upon matters of Software — refactoring, testing,<br/>
+        deadlines, teamwork, &amp; the like — and Poor Richard shall answer.
+      </p>
+      <form id="ask-form">
+        <div class="input-wrap">
+          <textarea
+            id="question"
+            name="question"
+            rows="3"
+            maxlength="500"
+            placeholder="Should I refactor before the release?"
+          ></textarea>
+        </div>
+        <button type="submit" id="ask-btn">Seek Counsel</button>
+        <p class="rate-note">Five queries per minute; daily counsel is finite.</p>
+      </form>
+    </section>
+
+    <section class="answer-section" id="answer-section" hidden>
+      <div class="masthead-rule thin"></div>
+      <h2 class="section-head">✦ Poor Richard Answers ✦</h2>
+      <div class="answer-text" id="answer-text"></div>
+
+      <div class="proverbs-used" id="proverbs-section">
+        <h3 class="proverbs-head">Proverbs Consulted</h3>
+        <ul class="proverbs-list" id="proverbs-list"></ul>
+      </div>
+    </section>
+
+    <div class="masthead-rule"></div>
+
+    <footer class="colophon">
+      <p>
+        Sayings drawn from <em>Franklin's Way to Wealth</em>, Ebook&nbsp;#43855,
+        Project Gutenberg. Public domain.
+      </p>
+      <p>
+        Embeddings: <code>nomic-embed-text</code> via Ollama ·
+        Generation: Claude (Anthropic) ·
+        Quote verification: verbatim substring check
+      </p>
+    </footer>
+
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
