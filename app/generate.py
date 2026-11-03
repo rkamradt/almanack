@@ -60,13 +60,16 @@ def verify_quotes(answer: str, sayings: list[dict]) -> bool:
     """
     Return True if every quoted string in *answer* appears verbatim as a
     substring of at least one retrieved saying's text field.
+    Strips leading/trailing punctuation from extracted quotes before matching
+    to tolerate minor punctuation differences introduced by the LLM.
     """
     quotes = extract_quotes(answer)
     if not quotes:
         return True  # no quotes to verify
     all_texts = [s["text"] for s in sayings]
     for q in quotes:
-        if not any(q in t for t in all_texts):
+        q_stripped = q.strip(".,;:!? ")
+        if not any(q_stripped in t for t in all_texts):
             return False
     return True
 

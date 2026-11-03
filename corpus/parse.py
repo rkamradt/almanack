@@ -85,7 +85,7 @@ def strip_gutenberg(raw: str) -> str:
 # Illustration captions and publisher boilerplate to ignore
 _SKIP_RE = re.compile(
     r"(Published by|Illustration|W\. Darton|Printed by|Holborn|FINIS|"
-    r"Just published|Repository|ebook|Project Gutenberg)",
+    r"Just published|Repository|ebook|Project Gutenberg|Page \d+)",
     re.IGNORECASE,
 )
 
